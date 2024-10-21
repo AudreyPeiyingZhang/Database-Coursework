@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Auction</title>
+</head>
+<body>
+    <header>
+        <h1>Create New Auction</h1>
+    </header>
+
+    <section>
+        <h2>Auction Details</h2>
+        <form action="create_auction.php" method="POST">
+            <p>
+                <label for="description">Item Description:</label>
+                <textarea name="description" id="description" required></textarea>
+            </p>
+            <p>
+                <label for="category">Category:</label>
+                <input type="text" name="category" id="category" required>
+            </p>
+            <p>
+                <label for="starting_price">Starting Price:</label>
+                <input type="number" name="starting_price" id="starting_price" step="0.01" required>
+            </p>
+            <p>
+                <label for="reserve_price">Reserve Price:</label>
+                <input type="number" name="reserve_price" id="reserve_price" step="0.01" required>
+            </p>
+            <p>
+                <label for="end_date">End Date (YYYY-MM-DD HH:MM:SS):</label>
+                <input type="datetime-local" name="end_date" id="end_date" required>
+            </p>
+            <button type="submit">Create Auction</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Copyright © 2024</p>
+    </footer>
+</body>
+</html>
