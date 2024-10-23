@@ -6,6 +6,8 @@
     <title>Create Auction</title>
 </head>
 <body>
+
+
     <header>
         <h1>Create New Auction</h1>
     </header>
@@ -14,25 +16,27 @@
         <h2>Auction Details</h2>
         <form action="create_auction.php" method="POST">
             <p>
-                <label for="description">Item Description:</label>
-                <textarea name="description" id="description" required></textarea>
+                <label for="Title">Item Title:</label>
+                <textarea name="Title" id="Title" placeholder="Enter the title" required></textarea>
             </p>
             <p>
-                <label for="category">Category:</label>
-                <input type="text" name="category" id="category" required>
+                <label for="Description">Item Description:</label>
+                <textarea name="Description" id="Description" placeholder="Enter the description" required></textarea>
+            </p>
+
+            <p>
+                <label for="EndTime">Item End Time (YYYY-MM-DD HH:MM:SS):</label>
+                <input type="datetime-local" name="EndTime" id="EndTime" required>
             </p>
             <p>
-                <label for="starting_price">Starting Price:</label>
-                <input type="number" name="starting_price" id="starting_price" step="0.01" required>
+                <label for="StartPrice">Item Start Price:</label>
+                <input type="number" name="StartPrice" id="StartPrice" required>
             </p>
             <p>
-                <label for="reserve_price">Reserve Price:</label>
-                <input type="number" name="reserve_price" id="reserve_price" step="0.01" required>
+                <label for="ItemImage">Upload Item Image:</label>
+                <input type="file" name="ItemImage" id="ItemImage" accept="image/*" required>
             </p>
-            <p>
-                <label for="end_date">End Date (YYYY-MM-DD HH:MM:SS):</label>
-                <input type="datetime-local" name="end_date" id="end_date" required>
-            </p>
+
             <button type="submit">Create Auction</button>
         </form>
     </section>

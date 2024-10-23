@@ -1,4 +1,5 @@
 <?php
+    session_start();
 
        // connect db
     $con = mysqli_connect('localhost', 'root', '', 'users');
@@ -18,7 +19,7 @@
         $password = $_POST['Password'];
     
         // check if user already exit
-        $check_user_sql = "SELECT * FROM usersinfo WHERE UserName='$username'";
+        $check_user_sql = "SELECT * FROM users WHERE UserName='$username'";
         $check_user_result = mysqli_query($con, $check_user_sql);
         
         if (mysqli_num_rows($check_user_result) > 0) 
@@ -28,7 +29,7 @@
         else 
         {
             // insert new data into db
-            $sql = "INSERT INTO usersinfo (UserName, Password) VALUES ('$username', '$password')";
+            $sql = "INSERT INTO users (UserName, Password) VALUES ('$username', '$password')";
             $result = mysqli_query($con, $sql);
         
             if ($result) 

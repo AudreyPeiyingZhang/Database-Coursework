@@ -1,4 +1,5 @@
 <?php
+    session_start();
 
     //connect db
 
@@ -19,12 +20,15 @@
         $password = $_POST['Password'];
 
         // search user info
-        $sql = "SELECT * FROM usersinfo WHERE UserName='$username' AND Password='$password'";
+        $sql = "SELECT * FROM users WHERE UserName='$username' AND Password='$password'";
         $result = mysqli_query($con, $sql);
 
         // check if username and password match
         if (mysqli_num_rows($result) == 1) 
         {
+            $row = mysqli_fetch_assoc($result);
+            // save userid to auction db
+            $_SESSION['UserID'] = $row['UserID'];
             echo "Login successful, welcome $username";
         } 
         else 
